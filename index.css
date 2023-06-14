@@ -1,0 +1,46 @@
+body {
+    font-family: "Permenant Marker", cursive;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+h1 {
+    width: 620px;
+    border: 6px solid black;
+    border-radius: 10px;
+    margin-left: 22%;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+#gameBoard {
+    border: white 3px solid;
+
+}
+
+#mode {
+    cursor: pointer;
+    font: bold;
+    font-size: 20px;
+    font-family: "Permanent Marker", cursive;
+    background-color: transparent;
+    margin-bottom: 3%;
+    border-radius: 10%;
+}
+
+#score {
+    font-family: "Permanent Marker", cursive;
+    font-size: 70px;
+}
+
+#resetBtn {
+    cursor: pointer;
+    font: bold;
+    font-family: "Permanent Marker", cursive;
+    font-size: 20px;
+    background-color: transparent;
+    border-radius: 20%;
+}
