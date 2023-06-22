@@ -46,6 +46,7 @@ gameStart();
 
 
 function gameStart() {
+    gameType.innerText = "TWO PLAYER GAME";
     createBall();
     nextTick();
 };
@@ -54,7 +55,7 @@ function switchGameMode() {
     if (twoPlayerGame) {
         twoPlayerGame = false;
         aiGameEasy = true;
-        gameType.innerText = "PLAYING AGAINST AI EASY MODE";
+        gameType.innerText = "PLAYING AGAINST AI";
         console.log(gameType.innerText);
 
     } else if (aiGameEasy) {
@@ -157,6 +158,7 @@ function checkCollision() {
     }
 };
 function changeDirection(event) {
+    console.log(twoPlayerGame);
     const keyPressed = event.keyCode;
     const blueUp = 87;
     const blueDown = 83;
@@ -177,16 +179,18 @@ function changeDirection(event) {
                 blue.y += paddleSpeed;
             }
             break;
-        case (redUp && twoPlayerGame):
-            event.preventDefault();
-            if (red.y > 0) {
-                red.y -= paddleSpeed;
-            }
-            break;
-        case (redDown && twoPlayerGame):
-            event.preventDefault();
-            if (red.y < gameHeight - red.height) {
-                red.y += paddleSpeed;
+        case (twoPlayerGame):
+            if (redUp) {
+                console.log("redUp");
+                event.preventDefault();
+                if (red.y > 0) {
+                    red.y -= paddleSpeed;
+                }
+            } else if (redDown) {
+                event.preventDefault();
+                if (red.y < gameHeight - red.height) {
+                    red.y += paddleSpeed;
+                }
             }
             break;
         case (reset):
